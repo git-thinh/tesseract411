@@ -10,8 +10,8 @@ using Newtonsoft.Json;
 
 class Program
 {
-    static int __PORT_WRITE = 1000;
-    static int __PORT_READ = 1001;
+    const int __PORT_WRITE = 1000;
+    const int __PORT_READ = 1001;
     static RedisBase m_subcriber;
     static bool __running = true;
 
