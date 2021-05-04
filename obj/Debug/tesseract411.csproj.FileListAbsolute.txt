@@ -1,0 +1,10 @@
+D:\tt\core\tesseract411\obj\Debug\tesseract411.csproj.CoreCompileInputs.cache
+D:\tt\build\tesseract411\leptonica-1.80.0.dll
+D:\tt\build\tesseract411\tesseract41.dll
+D:\tt\build\tesseract411\tessdata\eng.traineddata
+D:\tt\build\tesseract411\tessdata\vie.traineddata
+D:\tt\build\tesseract411\tesseract411.exe
+D:\tt\build\tesseract411\tesseract411.pdb
+D:\tt\core\tesseract411\obj\Debug\tesseract411.csproj.CopyComplete
+D:\tt\core\tesseract411\obj\Debug\tesseract411.exe
+D:\tt\core\tesseract411\obj\Debug\tesseract411.pdb
