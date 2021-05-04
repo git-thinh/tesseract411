@@ -107,7 +107,7 @@ class Program
         if (r != null)
         {
             redis.HSET("_OCR_REQUEST", r.requestId, JsonConvert.SerializeObject(r, Formatting.Indented));
-            redis.HSET("_OCR_REQ_LOG", r.requestId, r.ok.ToString());
+            redis.HSET("_OCR_REQ_LOG", r.requestId, r.ok == -1 ? "-1" : r.output_count.ToString());
             redis.PUBLISH("__TESSERACT_OUT", r.requestId);
         }
     }
