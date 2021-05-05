@@ -240,8 +240,8 @@
     <Compile Include="..\_shared\tesseract\4.1.1\WritingDirection.cs">
       <Link>_Shared\Tesseract\WritingDirection.cs</Link>
     </Compile>
-    <Compile Include="..\_shared\_document\oTesseractModel.cs">
-      <Link>_Shared\_Document\oTesseractModel.cs</Link>
+    <Compile Include="..\_Shared\_Document\TesseractModel.cs">
+      <Link>_Shared\_Document\TesseractModel.cs</Link>
     </Compile>
     <Compile Include="..\_shared\_static_this.cs">
       <Link>_Shared\_static_this.cs</Link>
