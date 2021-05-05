@@ -12,6 +12,8 @@ class Program
 {
     const int __PORT_WRITE = 1000;
     const int __PORT_READ = 1001;
+    const string __SUBCRIBE_IN = "__TESSERACT411_IN";
+    const string __SUBCRIBE_OUT = "__TESSERACT411_OUT";
     static RedisBase m_subcriber;
     static bool __running = true;
 
@@ -80,8 +82,11 @@ class Program
         return req;
     }
 
-    static void __executeBackground(byte[] buf)
+    static void __executeBackground(Tuple<string, byte[]> data)
     {
+        if (data == null) return;
+        var buf = data.Item2;
+
         oTesseractRequest r = null;
         string guid = Encoding.ASCII.GetString(buf);
         var redis = new RedisBase(new RedisSetting(REDIS_TYPE.ONLY_READ, __PORT_WRITE));
@@ -123,9 +128,11 @@ class Program
             {
                 if (bs.Count > 0)
                 {
-                    var buf = m_subcriber.__getBodyPublish("__TESSERACT_IN", bs.ToArray());
+                    var buf = m_subcriber.__getBodyPublish(bs.ToArray(), __SUBCRIBE_IN);
                     bs.Clear();
-                    new Thread(new ParameterizedThreadStart((o) => __executeBackground((byte[])o))).Start(buf);
+                    if (buf != null)
+                        new Thread(new ParameterizedThreadStart((o) =>
+                        __executeBackground((Tuple<string, byte[]>)o))).Start(buf);
                 }
                 Thread.Sleep(100);
                 continue;
